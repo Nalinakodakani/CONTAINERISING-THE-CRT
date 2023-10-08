@@ -1,5 +1,5 @@
 # Project Title
-CHINESE REMAINDER THEOREM IMPLEMENTATION
+CONTAINERISING THE CHINESE REMAINDER THEOREM IMPLEMENTATION
 
 # Description
 This application is to implement Chinese Remainder Theorem, which supports constructing the residue table and performing arithmetic operations.
