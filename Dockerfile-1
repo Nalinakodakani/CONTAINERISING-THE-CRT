@@ -1,0 +1,21 @@
+#FROM docker/whalesay:latest
+#LABEL Name=crt Version=0.0.1
+#RUN apt-get -y update && apt-get install -y fortunes
+#CMD ["sh", "-c", "/usr/games/fortune -a | cowsay"]
+# Get the GCC preinstalled image from Docker Hub
+FROM gcc:4.9
+
+# Copy the current folder which contains C++ source code to the Docker image under /usr/src
+# COPY . /usr/src/dockertest1
+COPY ElementPair.h /usr/src/dockertest1/
+COPY ElementPair.cpp /usr/src/dockertest1/
+COPY CRT.cpp /usr/src/dockertest1/
+
+# Specify the working directory
+WORKDIR /usr/src/dockertest1
+
+# Use GCC to compile the Test.cpp source file
+RUN g++ -o CRT CRT.cpp ElementPair.cpp ElementPair.h
+
+# Run the program output from the previous step
+CMD ["./CRT"]
